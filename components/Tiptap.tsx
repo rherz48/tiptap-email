@@ -41,7 +41,9 @@ export default function Tiptap({
 
   return (
     <div className='space-y-6'>
+      <div>
       <Toolbar editor={editor} />
+      </div>
       <EditorContent className='no-twp space-y-6' editor={editor} />
     </div>
   )
@@ -56,7 +58,7 @@ const Toolbar = ({ editor }: { editor: any }) => {
     <div className="control-group">
       <div className="button-group tiptap">
       {/* <input type="color" value="#958DF1"/> */}
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleBold().run()}
           disabled={
             !editor.can()
@@ -69,7 +71,7 @@ const Toolbar = ({ editor }: { editor: any }) => {
         >
           Bold
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleItalic().run()}
           disabled={
             !editor.can()
@@ -82,7 +84,7 @@ const Toolbar = ({ editor }: { editor: any }) => {
         >
           Italic
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleStrike().run()}
           disabled={
             !editor.can()
@@ -95,7 +97,7 @@ const Toolbar = ({ editor }: { editor: any }) => {
         >
           Strike
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleCode().run()}
           disabled={
             !editor.can()
@@ -108,85 +110,87 @@ const Toolbar = ({ editor }: { editor: any }) => {
         >
           Code
         </button>
-        <button onClick={() => editor.chain().focus().unsetAllMarks().run()}>
+        <button type='button'
+        onClick={() => editor.chain().focus().unsetAllMarks().run()}>
           Clear marks
         </button>
         <button onClick={() => editor.chain().focus().clearNodes().run()}>
           Clear nodes
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().setParagraph().run()}
           className={editor.isActive('paragraph') ? 'is-active' : ''}
         >
           Paragraph
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
           className={editor.isActive('heading', { level: 1 }) ? 'is-active' : ''}
         >
           H1
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
           className={editor.isActive('heading', { level: 2 }) ? 'is-active' : ''}
         >
           H2
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
           className={editor.isActive('heading', { level: 3 }) ? 'is-active' : ''}
         >
           H3
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
           className={editor.isActive('heading', { level: 4 }) ? 'is-active' : ''}
         >
           H4
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleHeading({ level: 5 }).run()}
           className={editor.isActive('heading', { level: 5 }) ? 'is-active' : ''}
         >
           H5
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
           className={editor.isActive('heading', { level: 6 }) ? 'is-active' : ''}
         >
           H6
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={editor.isActive('bulletList') ? 'is-active' : ''}
         >
           Bullet list
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleOrderedList().run()}
           className={editor.isActive('orderedList') ? 'is-active' : ''}
         >
           Ordered list
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleCodeBlock().run()}
           className={editor.isActive('codeBlock') ? 'is-active' : ''}
         >
           Code block
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().toggleBlockquote().run()}
           className={editor.isActive('blockquote') ? 'is-active' : ''}
         >
           Blockquote
         </button>
-        <button onClick={() => editor.chain().focus().setHorizontalRule().run()}>
+        <button type='button'
+        onClick={() => editor.chain().focus().setHorizontalRule().run()}>
           Horizontal rule
         </button>
         <button onClick={() => editor.chain().focus().setHardBreak().run()}>
           Hard break
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().undo().run()}
           disabled={
             !editor.can()
@@ -198,7 +202,7 @@ const Toolbar = ({ editor }: { editor: any }) => {
         >
           Undo
         </button>
-        <button
+        <button type='button'
           onClick={() => editor.chain().focus().redo().run()}
           disabled={
             !editor.can()
