@@ -16,7 +16,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
 import Tiptap from "@/components/Tiptap";
 import Sidebar from "@/components/Sidebar";
 
@@ -35,7 +34,7 @@ export default function Home() {
     },
   });
 
-  const { register, setValue, getValues } = form;
+  const { register } = form;
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const { body } = values;
@@ -90,6 +89,7 @@ export default function Home() {
               </Form>
             </div>
 
+            {/* Sidebar */}
             <div className="">
               <Sidebar></Sidebar>
             </div>
@@ -100,14 +100,19 @@ export default function Home() {
       <div className="flex flex-col items-center justify-between p-24">
         <div className="z-10 max-w-8xl items-center justify-between font-mono text-sm lg:flex flex-1 w-full">
           {/* Bottom buttons */}
-          <div className="flex items-center flx-1 gap-4 w-full ">
-            <div className="">
-              <Button type="submit">Publish</Button>
-              <Button type="submit" className="bg-slate-400">
+          <div className="flex items-center flex-1 gap-2 w-full ">
+            
+              <div>
+              <Button type="submit" className="bg-zinc-950 dark:bg-white">Publish</Button>
+              </div>
+              <div>
+              <Button type="submit" variant="outline" className="bg-gray-200">
                 Save draft
               </Button>
-            </div>
+              </div>
+            
 
+            <div className="p-4">
             <div className="flex items-center space-x-2">
               <Checkbox id="duplicate" />
               <label
@@ -117,9 +122,11 @@ export default function Home() {
                 Make a duplication
               </label>
             </div>
+            </div>
+
             <div className="flex-1"></div>
             <div className="flex items-end">
-              <Button type="submit" className="flex items-end bg-slate-400">
+              <Button type="submit" variant="outline" className="flex items-end bg-gray-200">
                 Send Test Email
               </Button>
             </div>
